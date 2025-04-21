@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.budgetbuddy.databinding.ActivitySettingsBinding
 import com.example.budgetbuddy.utils.DataManager
+import com.example.budgetbuddy.utils.FileHelper
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -16,23 +17,46 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val savedCurrency = DataManager.getCurrency(this)
-        val savedBudget = DataManager.getBudget(this)
+
 
         binding.editCurrency.setText(savedCurrency)
-        binding.editBudget.setText(if (savedBudget > 0) savedBudget.toString() else "")
+
 
         binding.saveSettingsButton.setOnClickListener {
             val currency = binding.editCurrency.text.toString()
-            val budget = binding.editBudget.text.toString().toFloatOrNull()
 
-            if (currency.isBlank() || budget == null) {
-                Toast.makeText(this, "Please enter valid currency and budget.", Toast.LENGTH_SHORT).show()
+            if (currency.isBlank()) {
+                Toast.makeText(this, "Please enter a valid currency.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            DataManager.saveSettings(this, currency, budget)
-            Toast.makeText(this, "Settings saved.", Toast.LENGTH_SHORT).show()
+            // Save only currency, keep the old budget
+            val existingBudget = DataManager.getBudget(this)
+            DataManager.saveSettings(this, currency, existingBudget)
+
+            Toast.makeText(this, "Currency saved.", Toast.LENGTH_SHORT).show()
             finish()
         }
+
+        binding.buttonExportData.setOnClickListener {
+            val transactions = DataManager.getTransactions(this)
+            val success = FileHelper.exportData(this, transactions)
+            if (success) {
+                Toast.makeText(this, "Backup saved successfully.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Backup failed.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.buttonImportData.setOnClickListener {
+            val restored = FileHelper.importData(this)
+            if (restored != null) {
+                DataManager.saveTransactions(this, restored)
+                Toast.makeText(this, "Data restored successfully.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "No backup found or error restoring.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 }

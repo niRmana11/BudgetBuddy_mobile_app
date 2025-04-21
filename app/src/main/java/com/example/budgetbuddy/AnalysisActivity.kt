@@ -1,6 +1,7 @@
 package com.example.budgetbuddy
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.budgetbuddy.databinding.ActivityAnalysisBinding
 import com.example.budgetbuddy.utils.DataManager
@@ -15,11 +16,30 @@ class AnalysisActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val transactions = DataManager.getTransactions(this)
-        val categoryMap = transactions.groupBy { it.category }.mapValues { entry ->
+
+        // Group only expenses (amount < 0)
+        val expenseTransactions = transactions.filter { it.amount < 0 }
+
+        // Group by category and sum expenses
+        val categoryMap = expenseTransactions.groupBy { it.category }.mapValues { entry ->
             entry.value.sumOf { it.amount }
         }
 
-        val summary = categoryMap.entries.joinToString("\n") { (cat, sum) -> "$cat: LKR %.2f".format(sum) }
-        binding.analysisTextView.text = if (summary.isNotEmpty()) summary else "No data to analyze."
+        // Format summary lines
+        val summaryList = categoryMap.entries.map { (cat, sum) ->
+            "$cat - LKR %.2f".format(-sum)  // show as positive
+        }
+
+        // Show in ListView
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, summaryList)
+        binding.analysisListView.adapter = adapter
+
+        if (summaryList.isEmpty()) {
+            summaryList.plus("No data to analyze.")
+        }
+
+        val totalExpense = expenseTransactions.sumOf { it.amount }
+        binding.totalTextView.text = "Total: LKR %.2f".format(-totalExpense)
+
     }
 }

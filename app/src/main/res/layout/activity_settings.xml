@@ -5,25 +5,41 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Currency"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
     <EditText
         android:id="@+id/editCurrency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Currency (e.g., LKR)" />
-
-    <EditText
-        android:id="@+id/editBudget"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Monthly Budget"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="8dp" />
+        android:hint="Currency (e.g., LKR)"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/saveSettingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Settings"
+        android:text="Save Currency"
         android:layout_marginTop="16dp"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/buttonExportData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export Data Backup"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/buttonImportData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restore from Backup"
+        android:layout_marginTop="8dp" />
+
 </LinearLayout>

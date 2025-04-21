@@ -31,6 +31,13 @@
         android:layout_marginTop="8dp" />
 
     <Button
+        android:id="@+id/viewBudgetSetupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setup Budget"
+        android:layout_marginTop="8dp" />
+
+    <Button
         android:id="@+id/viewSettingsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
