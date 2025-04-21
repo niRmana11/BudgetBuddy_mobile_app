@@ -1,6 +1,7 @@
 package com.example.budgetbuddy
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.budgetbuddy.databinding.ActivityBudgetSetupBinding
@@ -39,6 +40,11 @@ class BudgetSetupActivity : AppCompatActivity() {
         val budget = DataManager.getBudget(this)
         val transactions = DataManager.getTransactions(this)
         val totalExpense = transactions.filter { it.amount < 0 }.sumOf { it.amount }
+
+        val backButton = findViewById<ImageView>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish() // Go back to previous screen
+        }
 
         val spent = -totalExpense  // Convert to positive
         binding.expenseSummary.text = "You have spent: LKR %.2f".format(spent)

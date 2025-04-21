@@ -2,7 +2,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/primary_color"
     android:padding="16dp">
+
+    <!-- 🔙 Top bar with Back and Title -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="44dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/budgetTitle"
+            android:layout_width="277dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="12dp"
+            android:text="Budget Setup"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
     <TextView
         android:text="Set Monthly Budget"
@@ -17,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter budget amount"
+        android:backgroundTint="@color/secondary_color"
         android:inputType="numberDecimal"
         android:layout_marginTop="8dp" />
 
@@ -25,6 +57,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save Budget"
+        android:backgroundTint="@color/secondary_color"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textSize="17sp"
         android:layout_marginTop="12dp" />
 
     <TextView
@@ -41,6 +77,7 @@
         android:layout_marginTop="8dp"
         android:max="100"
         android:progress="0"
+        android:backgroundTint="@color/secondary_color"
         style="?android:attr/progressBarStyleHorizontal"/>
 
     <TextView

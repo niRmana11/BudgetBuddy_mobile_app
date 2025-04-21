@@ -9,6 +9,7 @@ import com.example.budgetbuddy.data.model.Transaction
 import com.example.budgetbuddy.databinding.ActivityAddTransactionBinding
 import com.example.budgetbuddy.utils.DataManager
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.absoluteValue
@@ -24,9 +25,12 @@ class AddTransactionActivity : AppCompatActivity() {
         binding = ActivityAddTransactionBinding.inflate(layoutInflater)
 
 
-
-
         setContentView(binding.root)
+
+        val backBtn = findViewById<ImageButton>(R.id.backButton)
+        backBtn.setOnClickListener {
+            finish() // 🔙 Return to previous screen
+        }
 
         // Toggle category visibility based on selected type
         binding.radioGroupType.setOnCheckedChangeListener { _, checkedId ->

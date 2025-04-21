@@ -2,6 +2,7 @@ package com.example.budgetbuddy
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.budgetbuddy.databinding.ActivityAnalysisBinding
 import com.example.budgetbuddy.utils.DataManager
@@ -16,6 +17,12 @@ class AnalysisActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val transactions = DataManager.getTransactions(this)
+
+        val backBtn = findViewById<ImageButton>(R.id.backButton)
+        backBtn.setOnClickListener {
+            finish()
+        }
+
 
         // Group only expenses (amount < 0)
         val expenseTransactions = transactions.filter { it.amount < 0 }

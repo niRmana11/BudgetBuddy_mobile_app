@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#f0f0f0"
+    android:background="@drawable/rounded_background"
     android:padding="12dp"
+
     android:layout_marginBottom="8dp">
 
     <TextView
@@ -45,6 +46,7 @@
             android:id="@+id/buttonEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
             android:text="Edit"
             android:textSize="14sp"/>
 
@@ -52,9 +54,10 @@
             android:id="@+id/buttonDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
             android:text="Delete"
             android:textSize="14sp"
             android:layout_marginStart="8dp"
-            android:textColor="@android:color/holo_red_dark"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 </LinearLayout>

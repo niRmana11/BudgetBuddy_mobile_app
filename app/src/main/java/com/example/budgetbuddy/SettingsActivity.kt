@@ -1,6 +1,7 @@
 package com.example.budgetbuddy
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.budgetbuddy.databinding.ActivitySettingsBinding
@@ -17,6 +18,12 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val savedCurrency = DataManager.getCurrency(this)
+
+        val backButton = findViewById<ImageView>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish() // Go back to previous screen
+        }
+
 
 
         binding.editCurrency.setText(savedCurrency)
