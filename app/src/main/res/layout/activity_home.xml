@@ -35,7 +35,7 @@
         android:fontFamily="sans-serif"
         android:textSize="17sp"
         android:textColor="@color/white"
-        android:text="Add Transaction" />
+        android:text="@string/add_transaction_btn" />
 
     <Button
         android:id="@+id/viewAnalysisButton"
@@ -46,7 +46,7 @@
         android:fontFamily="sans-serif"
         android:textSize="17sp"
         android:textColor="@color/white"
-        android:text="Spending Analysis"
+        android:text="@string/analysis_btn"
         android:layout_marginTop="8dp" />
 
     <Button
@@ -58,7 +58,7 @@
         android:fontFamily="sans-serif"
         android:textSize="17sp"
         android:textColor="@color/white"
-        android:text="Setup Budget"
+        android:text="@string/setup_budget_btn"
         android:layout_marginTop="8dp" />
 
     <Button
@@ -70,7 +70,7 @@
         android:fontFamily="sans-serif"
         android:textSize="17sp"
         android:textColor="@color/white"
-        android:text="Settings"
+        android:text="@string/settings_btn"
         android:layout_marginTop="8dp" />
 
     <androidx.recyclerview.widget.RecyclerView

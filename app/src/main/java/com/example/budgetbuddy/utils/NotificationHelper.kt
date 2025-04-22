@@ -14,20 +14,20 @@ object NotificationHelper {
     fun showBudgetWarning(context: Context, message: String) {
         val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        // 🔕 Step 1: Create notification channel without sound
+        // Create notification channel without sound
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
                 CHANNEL_NAME,
                 NotificationManager.IMPORTANCE_HIGH
             ).apply {
-                setSound(null, null) // 🔕 Disable sound completely
-                enableVibration(true) // optional
+                setSound(null, null)
+                enableVibration(true)
             }
             manager.createNotificationChannel(channel)
         }
 
-        // 🔔 Step 2: Build and show the notification
+        // Build and show the notification
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("Budget Alert")

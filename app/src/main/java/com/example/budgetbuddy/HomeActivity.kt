@@ -65,13 +65,13 @@ class HomeActivity : AppCompatActivity() {
 
     private fun checkBudgetAndNotify() {
         val budget = DataManager.getBudget(this)
-        if (budget <= 0f) return // budget not set
+        if (budget <= 0f) return
 
         val totalSpent = DataManager.getTransactions(this)
             .filter { it.amount < 0 }
             .sumOf { it.amount }
 
-        val spent = -totalSpent // convert to positive value
+        val spent = -totalSpent
         val percent = (spent / budget * 100).toInt()
 
         if (percent >= 100) {
@@ -88,7 +88,7 @@ class HomeActivity : AppCompatActivity() {
         transactions.addAll(DataManager.getTransactions(this))
         transactionAdapter.notifyDataSetChanged()
 
-        // 🔥 Trigger budget alert if needed
+
         checkBudgetAndNotify()
     }
 
@@ -99,7 +99,7 @@ class HomeActivity : AppCompatActivity() {
         val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
         val calendar = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, 20) // 8 PM
+            set(Calendar.HOUR_OF_DAY, 20)
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
             if (before(Calendar.getInstance())) {

@@ -5,7 +5,7 @@
     android:background="@color/primary_color"
     android:padding="16dp">
 
-    <!-- 🔙 Top bar with Back and Title -->
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:id="@+id/editBudget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter budget amount"
+        android:hint="@string/budget_hint"
         android:backgroundTint="@color/secondary_color"
         android:inputType="numberDecimal"
         android:layout_marginTop="8dp" />
@@ -56,7 +56,7 @@
         android:id="@+id/saveBudgetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Budget"
+        android:text="@string/save_budget_btn"
         android:backgroundTint="@color/secondary_color"
         android:textStyle="bold"
         android:fontFamily="sans-serif"

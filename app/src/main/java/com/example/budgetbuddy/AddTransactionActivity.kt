@@ -29,7 +29,7 @@ class AddTransactionActivity : AppCompatActivity() {
 
         val backBtn = findViewById<ImageButton>(R.id.backButton)
         backBtn.setOnClickListener {
-            finish() // 🔙 Return to previous screen
+            finish()
         }
 
         // Toggle category visibility based on selected type
@@ -41,7 +41,7 @@ class AddTransactionActivity : AppCompatActivity() {
             }
         }
 
-        // 🔥 Trigger the visibility manually based on the default selection
+        //  Trigger the visibility manually based on the default selection
         val selectedId = binding.radioGroupType.checkedRadioButtonId
         if (selectedId == R.id.radioIncome) {
             binding.layoutCategory.visibility = View.GONE
@@ -85,7 +85,7 @@ class AddTransactionActivity : AppCompatActivity() {
             val existing = DataManager.getTransactions(this).find { it.id == passedId }
             existing?.let {
                 binding.editTitle.setText(it.title)
-                binding.editAmount.setText(it.amount.absoluteValue.toString()) // show positive value
+                binding.editAmount.setText(it.amount.absoluteValue.toString())
                 selectedDate = it.date
                 binding.editDate.setText(selectedDate)
                 binding.radioIncome.isChecked = it.amount >= 0
@@ -112,7 +112,7 @@ class AddTransactionActivity : AppCompatActivity() {
             val amount = if (isIncome) rawAmount else -rawAmount
 
             val transactions = DataManager.getTransactions(this).toMutableList()
-            // If editing, remove the old one
+
             editingTransactionId?.let {
                 transactions.removeIf { t -> t.id == it }
             }

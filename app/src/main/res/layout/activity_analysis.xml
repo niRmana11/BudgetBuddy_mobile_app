@@ -7,7 +7,7 @@
     android:background="@color/primary_color"
     android:padding="16dp">
 
-    <!-- 🔙 Back button + Title -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:textColor="@color/black"/>
     </LinearLayout>
 
-    <!-- 📊 Category-wise list -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp" />
 
-    <!-- 💰 Total Expense -->
+
     <TextView
         android:id="@+id/totalTextView"
         android:layout_width="match_parent"

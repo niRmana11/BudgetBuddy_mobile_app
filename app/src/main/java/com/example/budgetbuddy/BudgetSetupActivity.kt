@@ -43,10 +43,10 @@ class BudgetSetupActivity : AppCompatActivity() {
 
         val backButton = findViewById<ImageView>(R.id.backButton)
         backButton.setOnClickListener {
-            finish() // Go back to previous screen
+            finish()
         }
 
-        val spent = -totalExpense  // Convert to positive
+        val spent = -totalExpense
         binding.expenseSummary.text = "You have spent: LKR %.2f".format(spent)
 
         if (budget > 0) {

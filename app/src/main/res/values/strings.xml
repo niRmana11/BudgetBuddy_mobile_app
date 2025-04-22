@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">BudgetBuddy</string>
+
+    <string name="currency_hint">Currency (e.g., LKR)</string>
+    <string name="budget_hint">Enter budget amount</string>
+
+    <string name="save_transaction_btn">Save</string>
+    <string name="save_budget_btn">Save Budget</string>
+    <string name="add_transaction_btn">Add Transaction</string>
+    <string name="analysis_btn">Spending Analysis</string>
+    <string name="setup_budget_btn">Setup Budget</string>
+    <string name="settings_btn">Settings</string>
+    <string name="save_currency_btn">Save Currency</string>
+    <string name="export_btn">Export Data Backup</string>
+    <string name="restore_btn">Restore from Backup</string>
+    <string name="edit_btn">Edit</string>
+    <string name="delete_btn">Delete</string>
 </resources>

@@ -25,7 +25,7 @@ class TransactionAdapter(
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
         val transaction = transactions[position]
         val context = holder.itemView.context
-        val currency = DataManager.getCurrency(context) // 🔥 get currency set in settings
+        val currency = DataManager.getCurrency(context)
 
         with(holder.binding) {
             textTitle.text = transaction.title
@@ -33,14 +33,14 @@ class TransactionAdapter(
             textCategory.text = transaction.category
             textDate.text = transaction.date
 
-            // ✏️ Edit
+            //  Edit
             buttonEdit.setOnClickListener {
                 val intent = Intent(context, AddTransactionActivity::class.java)
                 intent.putExtra("transaction_id", transaction.id)
                 context.startActivity(intent)
             }
 
-            // ❌ Delete
+            //  Delete
             buttonDelete.setOnClickListener {
                 AlertDialog.Builder(context)
                     .setTitle("Delete Transaction")

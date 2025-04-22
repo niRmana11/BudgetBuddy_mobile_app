@@ -24,7 +24,7 @@ class AnalysisActivity : AppCompatActivity() {
         }
 
 
-        // Group only expenses (amount < 0)
+        // Group only expenses
         val expenseTransactions = transactions.filter { it.amount < 0 }
 
         // Group by category and sum expenses
@@ -34,7 +34,7 @@ class AnalysisActivity : AppCompatActivity() {
 
         // Format summary lines
         val summaryList = categoryMap.entries.map { (cat, sum) ->
-            "$cat - LKR %.2f".format(-sum)  // show as positive
+            "$cat - LKR %.2f".format(-sum)
         }
 
         // Show in ListView
