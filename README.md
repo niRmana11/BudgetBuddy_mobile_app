@@ -55,8 +55,8 @@ Built for the **Mobile Application Development – CA Component 3** assignment.
 
 ## 📧 Credits
 
-Developed by: [Your Name]  
-University: [Your University Name]  
+Developed by: [Nirmana Herath]  
+University: [Sri Lanka Institute of Information Technology]  
 Module: Mobile Application Development (IT2010)
 
 ---
