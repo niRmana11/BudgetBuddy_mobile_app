@@ -37,10 +37,10 @@ Built for the **Mobile Application Development – CA Component 3** assignment.
 
 ## User Interfaces
 
-# Onboarding, Home and Add Transaction Screens
+### Onboarding, Home and Add Transaction Screens
 <img width="1280" height="720" alt="main" src="https://github.com/user-attachments/assets/4353cb92-c7de-42c1-b395-4e1f39fd6ad7" />
 
-# Spending analysis, Settings and Budget setup Screens
+### Spending analysis, Settings and Budget setup Screens
 <img width="1280" height="720" alt="Others" src="https://github.com/user-attachments/assets/01893f0f-6dba-4340-adfd-33274c3c74a5" />
 
 ---
