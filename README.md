@@ -35,6 +35,14 @@ Built for the **Mobile Application Development – CA Component 3** assignment.
 
 ---
 
+## User Interfaces
+
+![Onboarding, Home and Add Transaction Screens](<img width="1280" height="720" alt="Main Screens" src="https://github.com/user-attachments/assets/6da81dff-876f-4caf-9c33-85265c8f8d9f" />)
+![Spending analysis, Settings and Budget setup Screens](<img width="1280" height="720" alt="Other Screens" src="https://github.com/user-attachments/assets/1f998971-d3a8-4461-a88f-151f3d115fd0" />)
+
+
+---
+
 ## 📦 How to Run
 
 1. Clone this repo in Android Studio
